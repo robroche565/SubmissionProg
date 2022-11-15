@@ -19,7 +19,6 @@ html {
 body{
     margin:0;
     padding:0;
-    font-family: Segoe UI;
 }
 header {
     position: fixed;
@@ -30,7 +29,6 @@ header {
     width: 100%; 
     padding: 20px 5%;   
 }
-
 
 .logo {
     width: 10%;
@@ -102,7 +100,7 @@ button:hover{
     font-size: 50px;
 }
 
-#section2 {
+#section2 {  
     height: 600px;
     background-image:url(../images/green-diamond-patterns-wallpaper-preview.jpg);
     background-repeat: no-repeat;
@@ -137,23 +135,59 @@ button:hover{
 }
 
 #section3 {
-    height: 700px;
-    background: red;
-    display: inline-block;
-    width: 100%
+    height: 900px;
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/green-diamond-patterns-wallpaper-preview.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding:50px 0px;
+}
+.title h2{
+    color: white;
+    font-size: 75px;
+    width: 1130px;
+    margin: 10px auto;
+    text-align: center;
 }
 
-#section3 {
-    height: 700px;
-    background: yellow;
-    display: inline-block;
-    width: 100%
+.box{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100px;
+    margin-left: 60px;
 }
+
+.card {
+    height: 250px;
+    width: 335px;
+    padding: 20px 35px;
+    background: #799e8d;
+    border-radius: 20px;
+    margin: 15px;
+    position: static;
+    overflow: hidden;
+    text-align: center;
+}
+h5 {
+    color: black;
+    font-size: 23px;
+    margin-bottom: 16px;
+}
+.pra p {
+    color: aliceblue;
+    font-size: 16px;
+    line-height: 27px;
+    margin-bottom: 25px;
+}
+
 #section4 {
-    height: 700px;
-    background: orange;
+    height: 600px;
+    background-image:url(../images/green-diamond-patterns-wallpaper-preview.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     display: inline-block;
-    width: 100%
+    width: 100%;
 }
 
 
