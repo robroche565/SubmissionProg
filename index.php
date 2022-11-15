@@ -92,10 +92,9 @@
 
         <section id="section4">
             <div class="about-us">
-                    <img src="images\BK-1.png"> 
+                    <img src="images\BK-1.png" > 
                     <div class="about-text">
-                        <h1>Service</h1>
-                        <h5>What do we do here?</h5>
+                        <h1>About Us</h1>
                         <p>Lorem ipsum dolor sit amet. A assumenda nesciunt eum quis enim qui dolorem 
                             sunt 33 quaerat minima ut accusantium laborum quo iure voluptatem. Qui sint 
                             reprehenderit qui suscipit voluptatem qui fugiat dolore. Hic voluptas neque

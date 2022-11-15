@@ -6,7 +6,7 @@
     
 }
 li, a, button {
-    font-family: Segoe UI;
+    
     font-weight: 500;
     font-size: 16px;
     color: #060013;
@@ -162,7 +162,7 @@ button:hover{
     height: 250px;
     width: 335px;
     padding: 20px 35px;
-    background: #799e8d;
+    background: #678879;
     border-radius: 20px;
     margin: 15px;
     position: static;
@@ -182,13 +182,36 @@ h5 {
 }
 
 #section4 {
-    height: 600px;
-    background-image:url(../images/green-diamond-patterns-wallpaper-preview.jpg);
+    height: 400px;
+    background-image:url(../images/3897150.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     display: inline-block;
     width: 100%;
+    padding-top: 5%;
+    justify-content: flex-end;
 }
 
+#section4 img {
+    width: 450px;
+    position: static;
+    margin-top: 3%;
+}
+.about-text {
+    width: 550px;
+}
+.about-us {
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+.about-us h1{
+    font-size: 80px;
+    color: white;
+}
 
 
