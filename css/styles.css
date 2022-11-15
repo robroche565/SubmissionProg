@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
     
 }
 li, a, button {
@@ -85,22 +86,54 @@ button:hover{
 #section1 h1 {
     margin-top: 15%;
     margin-left: 6%;
-    color: white; 
+    color: white;
+    font-size: 75px; 
 }
+
+
 #section1 img {
     margin-left: 6%;
-    width: 11%;
+    width: 25%;
+    border-color: #060013;
 }
 #section1 h2 {
     margin-left: 6%;
     color: white; 
+    font-size: 50px;
 }
 
 #section2 {
-    height: 700px;
-    background: blue;
+    height: 600px;
+    background-image:url(../images/green-diamond-patterns-wallpaper-preview.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     display: inline-block;
-    width: 100%
+    width: 100%;
+     
+}
+#section2 img {
+    width: 350px;
+    position: static;
+    margin-top: 5%;
+}
+.service-text {
+    width: 550px;
+}
+.services {
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.service-text h1{
+    font-size: 80px;
+}
+.service-text h5{
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: black;
 }
 
 #section3 {
@@ -122,4 +155,6 @@ button:hover{
     display: inline-block;
     width: 100%
 }
+
+
 
