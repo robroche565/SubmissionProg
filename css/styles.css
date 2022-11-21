@@ -27,11 +27,12 @@ header {
     justify-content: flex-end;
     align-items: center;
     width: 100%; 
-    padding: 20px 5%;   
+    padding: 20px 5%;
+    z-index: 999;   
 }
 
 .logo {
-    width: 10%;
+    width: 20%;
     cursor: pointer;
     margin-right: auto;
 }
@@ -77,8 +78,15 @@ button:hover{
     background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/bg-img.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    display: inline-block;
-    width: 100%
+    display: flex;
+    width: 100%;
+    padding-left: 8%;
+    padding-top: 5%;
+}
+
+.container_sec1{
+    margin-top:10%;
+    margin-right: 20%;
 }
 
 #section1 h1 {
@@ -89,15 +97,21 @@ button:hover{
 }
 
 
-#section1 img {
-    margin-left: 6%;
-    width: 25%;
-    border-color: #060013;
+.left {
+    width: 40%;
+    margin-left: 7%;
 }
 #section1 h2 {
     margin-left: 6%;
     color: white; 
     font-size: 50px;
+}
+
+.other {
+    margin-top: 23%;
+    float: left;
+    position:static;
+    width: 60%;
 }
 
 #section2 {  
@@ -135,12 +149,13 @@ button:hover{
 }
 
 #section3 {
-    height: 900px;
+    height: 1000px;
     background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/green-diamond-patterns-wallpaper-preview.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     padding:50px 0px;
+    
 }
 .title h2{
     color: white;
@@ -155,7 +170,7 @@ button:hover{
     justify-content: space-between;
     align-items: center;
     min-height: 100px;
-    margin-left: 60px;
+    margin-left: 100px;
 }
 
 .card {
@@ -168,6 +183,11 @@ button:hover{
     position: static;
     overflow: hidden;
     text-align: center;
+
+}
+.card:hover{
+    transform: scale(1.2);
+	transition: .3s;
 }
 h5 {
     color: black;
@@ -188,7 +208,7 @@ h5 {
     background-size: cover;
     display: inline-block;
     width: 100%;
-    padding-top: 5%;
+    padding-top: 2%;
     justify-content: flex-end;
 }
 
@@ -196,6 +216,8 @@ h5 {
     width: 450px;
     position: static;
     margin-top: 3%;
+    justify-content: flex-end;
+    
 }
 .about-text {
     width: 550px;

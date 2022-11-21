@@ -15,7 +15,9 @@
 </head>
     <body>
         <header>
-            <img class="logo" src="images/Spy_×_Family_logo.png">
+            <div> 
+                <a href="#"> <img class="logo" src="images/Spy_×_Family_logo.png"> </a>
+            </div>
             <nav>
                 <ul class="nav_links">
                     <li><a href="#section1">Home</a></li>
@@ -31,10 +33,13 @@
         <section id="section1">
             <div class="container_sec1">
                 <h1>Welcome to </h1>
-                <img src="images/Spy_×_Family_logo.png">
+                <img class="left"src="images/Spy_×_Family_logo.png">
                 <h2>Cafe Restaurant</h2>
             </div>
-            
+            <div> 
+                <img class="other" src="images/069.jpg"> 
+            </div>
+             
         </section>  
 
         <section id="section2">
@@ -49,7 +54,8 @@
                         est voluptatibus quia qui dolorem eius nam modi possimus et necessitatibus 
                         ducimus non reiciendis voluptas. Sit earum tempore ut dolores nihil aut illum 
                         doloribus ea unde suscipit rem tempora sunt ut impedit ipsam.</p>
-                </div>  
+                </div> 
+                
             </div>        
         </section>
 
@@ -92,7 +98,7 @@
 
         <section id="section4">
             <div class="about-us">
-                    <img src="images\BK-1.png" > 
+                    
                     <div class="about-text">
                         <h1>About Us</h1>
                         <p>Lorem ipsum dolor sit amet. A assumenda nesciunt eum quis enim qui dolorem 
@@ -101,7 +107,8 @@
                             est voluptatibus quia qui dolorem eius nam modi possimus et necessitatibus 
                             ducimus non reiciendis voluptas. Sit earum tempore ut dolores nihil aut illum 
                             doloribus ea unde suscipit rem tempora sunt ut impedit ipsam.</p>
-                    </div>  
+                    </div> 
+                    <img src="images\BK-1.png" >  
                 </div>
         </section>
 
