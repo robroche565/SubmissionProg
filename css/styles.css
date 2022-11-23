@@ -19,22 +19,24 @@ html {
 body{
     margin:0;
     padding:0;
+    height: 100vh;
 }
 header {
     position: fixed;
-    background-color: #799e8d;  
+    background-color: #799e8d;
+    width: 201vh;  
     display: flex;
     justify-content: flex-end;
-    align-items: center;
-    width: 100%; 
+    align-items: center; 
     padding: 20px 5%;
     z-index: 999;   
 }
 
 .logo {
-    width: 20%;
+    display: flex;
+    width: 15vh;
     cursor: pointer;
-    margin-right: auto;
+    margin-right: 90vh;
 }
 .nav_links {
     list-style: none;
@@ -53,8 +55,7 @@ header {
     color: beige;
 }
 
-button {
-    margin-left: 20px;
+.button {  
     padding: 9px 25px;
     background-color: #cb3a3c;
     color: white;
@@ -64,13 +65,58 @@ button {
     transition: all 0.3s ease 0s;
 }
 
-button:hover{
+.button:hover{
     padding: 9px 25px;
     background-color: #8f1f21;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+}
+.popup {
+    background: rgba(0, 0, 0, .6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.popup-container {
+    height: 250px;
+    width: 500px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+
+}
+.popup-container .logopop{
+    width: 15vh;
+   
+}
+
+.popup-container input {
+    margin: 20px auto;
+    display: block;
+    width: 50%;
+    padding: 8px;
+    border: 1px solid gray;
+}
+
+.close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 30px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 6px 6px 29px -4px rgba(0, 0, 0, .75);
+    cursor: pointer;
+
 }
 
 #section1 {
@@ -87,12 +133,23 @@ button:hover{
 .container_sec1{
     margin-top:10%;
     margin-right: 20%;
+    background: rgba(255,255,255,0.4);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, .2);
+    position: relative;
+    border-radius: 5px;
+    border-color: #060013;
+    border-style: solid;
+    display: block;
+    height: 50vh;
+    position: static;
+    overflow: hidden;
+    
 }
 
 #section1 h1 {
     margin-top: 15%;
     margin-left: 6%;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 75px; 
 }
 
@@ -103,7 +160,7 @@ button:hover{
 }
 #section1 h2 {
     margin-left: 6%;
-    color: white; 
+    color: rgb(15, 15, 15); 
     font-size: 50px;
 }
 
