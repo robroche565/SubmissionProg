@@ -31,15 +31,25 @@
                   
             
         </header>
-        <div class="popup">
-            <div class="popup-container">
-                <img src="images/close-icon-29.png" alt="close" class="close">
-                <img src="images/Spy_×_Family_logo.png" alt="user" class="logopop">
-                <input type="text" placeholder="Username">
-                <input type="password" placeholder="Password">
-                <a href="#" class="button" >Login</a>
+        <form action="login.php" method="post"> 
+            <div class="popup">
+                <div class="popup-container">
+                    <img src="images/close-icon-29.png" alt="close" class="close">
+                    <div class="color_logo">
+                        <img src="images/Spy_×_Family_logo.png" alt="user" class="logopop">
+                    </div>
+                    
+                    <br /><br />
+                    <label>Username</label>
+                    <input type="text" placeholder="Username">
+                    <label>Password</label>
+                    <input type="password" placeholder="Password">
+                    <button type="submit" class="button">Login</button>
+                </div>
             </div>
-        </div>
+            
+        </form>
+        
         <script>
             document.getElementById("button").addEventListener("click", function(){
                 document.querySelector(".popup").style.display="flex";
