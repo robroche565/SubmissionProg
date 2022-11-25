@@ -16,9 +16,8 @@
                 <div class="container">
                     <a href="#" class="button" id="button">Login</a>
                 </div>
-                  
-            
         </header>
+
         <form action="login.php" method="post"> 
             <div class="popup">
                 <div class="popup-container">
@@ -32,10 +31,10 @@
                     <input type="text" placeholder="Username">
                     <label>Password</label>
                     <input type="password" placeholder="Password">
+                    <a href="#" class="button_create" id="button_create">Create Account</a> 
                     <button type="submit" class="button">Login</button>
                 </div>
             </div>
-            
         </form>
         
         <script>
@@ -46,6 +45,41 @@
                 document.querySelector(".popup").style.display="none";
             })
         </script>
+
+        <form action="signup.php" method="post"> 
+            <div class="popup_signup">
+                <div class="popup-container-signup">
+                    <img src="../images/close-icon-29.png" alt="close" class="close-signup">
+                    <div class="color_logo">
+                        <img src="../images/Spy_×_Family_logo.png" alt="user" class="logopop">
+                    </div>
+                    <br />
+                    <label>Username</label>
+                    <input type="text" placeholder="Username">
+                    <label>First Name</label>
+                    <input type="text" placeholder="First name">
+                    <label>Last Name</label>
+                    <input type="text" placeholder="Last name">
+                    <label>Password</label>
+                    <input type="password" placeholder="Password">
+                    <button type="submit" class="button_create">Create Account</button>
+                </div>
+            </div>
+        </form>
+
+        <script>
+            document.getElementById("button_create").addEventListener("click", function(){
+                document.querySelector(".popup_signup").style.display="flex";
+            })
+            document.querySelector(".close-signup").addEventListener("click", function(){
+                document.querySelector(".popup_signup").style.display="none";
+            })
+        </script>
+
+
+
+
+
         
         
         <section id="section1">
