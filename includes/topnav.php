@@ -29,7 +29,7 @@
                     <input type="text" name="username"  id="username" placeholder="Username" required>
                     <label>Password</label>
                     <input type="password" name="password"  id="password" placeholder="Password" required>
-                    <a href="#" class="button_create" id="button_create">Create Account</a> 
+                    <a href="#" class="button_create" id="button_create">Create Account</a>  
                     <button type="submit" class="button" name="login">Login</button>
                 </div>
             </div>
