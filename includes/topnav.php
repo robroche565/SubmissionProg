@@ -27,9 +27,9 @@
                     
                     <br /><br />
                     <label>Username</label>
-                    <input type="text" name="username" value="username" id="username" placeholder="Username" required>
+                    <input type="text" name="username"  id="username" placeholder="Username" required>
                     <label>Password</label>
-                    <input type="password" name="password" value="password" id="password" placeholder="Password" required>
+                    <input type="password" name="password"  id="password" placeholder="Password" required>
                     <a href="#" class="button_create" id="button_create">Create Account</a> 
                     <button type="submit" class="button" name="login">Login</button>
                 </div>
@@ -58,7 +58,7 @@
                     <input type="text" name="firstname" placeholder="First name" required>
                     <label>Last Name</label>
                     <input type="text" name="lastname" placeholder="Last name" required>
-                    <input type="hidden" id="custId" name="type" id="type" value="user">
+                    <input type="hidden" id="type" name="type" id="type" value="user">
                     <label>User Name</label>
                     <input type="text" name="username" placeholder="Username" required>
                     <label>Password</label>
