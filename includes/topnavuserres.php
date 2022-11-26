@@ -1,13 +1,13 @@
 <header>
     <div> 
-        <a href="#"> <img class="logo" src="../images/Spy_×_Family_logo.png"> </a>
+        <a href="../user/userpage.php"> <img class="logo" src="../images/Spy_×_Family_logo.png"> </a>
     </div>
     <nav>
         <ul class="nav_links">
-            <li><a href="#section1">Home</a></li>
-            <li><a href="#section2">Service</a></li>
-            <li><a href="#section3">Waiter/Waitress</a></li>
-            <li><a href="#section4">About Us</a></li>
+            <li><a href="../user/userpage.php">Home</a></li>
+            <li><a href="../user/userpage.php">Service</a></li>
+            <li><a href="../user/userpage.php">Waiter/Waitress</a></li>
+            <li><a href="../user/userpage.php">About Us</a></li>
             <li><a href="../reserve/reserve.php">Reserve</a></li>
         </ul> 
     </nav>
