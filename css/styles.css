@@ -543,3 +543,155 @@ footer p:nth-child(2){
 	transition: .3s;
 }
 
+.add-form-container{
+    display: block;
+    flex-direction: row;
+    height:650px;
+    padding-top: 135px;
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../images/spy-x-family-eating-in-restaurant-8x0huenhrpktet91.png);
+    width: 100%;
+}
+.add-form-box{
+    margin-left: 8%;
+}
+.add-form-container p.error{
+    text-align: justify;
+    line-height: 20px;
+    padding: 0;
+    font-size: 12px;
+}
+.add-form-container label {
+    display: block;
+}
+.add-form-container h3 {
+    font-size: 30px;
+}
+
+.add-form-container input[type="datetime-local" i] {
+    padding: 2%;
+    width: 70%;
+}
+.container {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    padding-top: 5px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-top: 5px;
+  }
+  
+  /* Hide the browser's default radio button */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
+
+  /* Create a custom checkbox */
+.checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkbox {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkbox {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkbox/indicator (hidden when not checked) */
+  .checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkbox when checked */
+  .container input:checked ~ .checkbox:after {
+    display: block;
+  }
+  
+  /* Style the checkbox/indicator */
+  .container .checkbox:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .add-form{
+    max-width: 400px;
+  }
+
+  form.add-form .button{
+    display: block;
+    margin: 0 0 0 auto;
+  }
+
+  .form-size{
+    max-width: 400px;
+  }
+
