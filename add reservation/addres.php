@@ -19,7 +19,7 @@
         }
         if(validate_reservation($_POST)){
             if($reservation->add()){  
-                header('location: ../admin/dashboard.php');
+                header('location: ../admin/reserve.php');
             }
         }
     }

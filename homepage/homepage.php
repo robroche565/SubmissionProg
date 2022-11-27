@@ -13,6 +13,7 @@
         $users->password = htmlentities($_POST['password']);
         $res = $users->validate();
         if($res){
+            $_SESSION['user'] = $res['id'];
             $_SESSION['logged-in'] = $res['username'];
             $_SESSION['fullname'] = $res['firstname'].' '.$res['lastname'];
             $_SESSION['user_type'] = $res['type'];
