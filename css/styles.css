@@ -544,38 +544,80 @@ footer p:nth-child(2){
 }
 
 .add-form-container{
-    display: block;
-    flex-direction: row;
-    height:650px;
-    padding-top: 135px;
+    height:700px;
+    padding-top: 110px;
     background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../images/spy-x-family-eating-in-restaurant-8x0huenhrpktet91.png);
     width: 100%;
+    font-size: 25px;
 }
 .add-form-box{
-    margin-left: 8%;
+    margin-left: 4%;
+    background: rgba(255,255,255,0.4);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    border-color: #060013;
+    border-style: solid;
+    height: 76vh;
+    width: 80vh;
+    padding: 1%;
 }
 .add-form-container p.error{
     text-align: justify;
     line-height: 20px;
     padding: 0;
     font-size: 12px;
+    color: #cb3a3c;
 }
 .add-form-container label {
     display: block;
+    margin-top: 3%;
 }
 .add-form-container h3 {
-    font-size: 30px;
+    font-size: 50px;
 }
+
+.button_res {  
+    padding: 9px ;
+    background-color: #cb3a3c;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    width: 30%;
+    font-size: 20px;
+    position: relative;
+    left: 90%;
+    
+}
+
+.button_res:hover{
+    padding: 9px 25px;
+    background-color: #8f1f21;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
 
 .add-form-container input[type="datetime-local" i] {
     padding: 2%;
     width: 70%;
+    font-size: 15px;
+    
+}
+
+.add-form-container input[type="text" i] {
+    padding: 2%;
+    width: 100%;
+    font-size: 15px;
 }
 .container {
     display: inline-block;
     position: relative;
     padding-left: 35px;
-    padding-top: 5px;
+    
     margin-bottom: 12px;
     cursor: pointer;
     -webkit-user-select: none;

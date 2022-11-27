@@ -2,6 +2,7 @@
 
     //resume session here to fetch session values
     session_start();
+
     
     require_once '../includes/autochecker.php';
     require_once '../includes/header.php';
