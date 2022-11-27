@@ -1,10 +1,12 @@
-<?php
-
-    //resume session here to fetch session values
+<?php 
+  session_start();
+  require_once '../includes/autochecker.php';
+  require_once '../includes_admin/header.php';
+  require_once '../includes_admin/sidebar.php';
+  require_once '../includes_admin/script.php';
+  require_once '../classes/reservation.class.php';
+  require_once '../tools/functions.php';
     
-    require_once '../classes/reservation.class.php';
-    require_once '../tools/functions.php';
-    session_start();
 
     if(isset($_POST['res'])){
 
@@ -17,23 +19,20 @@
         }
         if(validate_reservation($_POST)){
             if($reservation->add()){  
-                header('location: ../user/userpage.php');
+                header('location: ../admin/dashboard.php');
             }
         }
     }
-    
-    require_once '../includes/autochecker.php';
-    require_once '../includes/header.php';
-    require_once '../includes/topnavuserres.php';
-    
-    
 ?>
-    
-
-    <div class="add-form-container">
+<div class="home-content">
+    <div class="table-container">
+        <div class="table-heading form-size">
+            <h3 class="table-title">Add New Reservation</h3>
+            <a class="back" href="../admin/reserve.php"><i class='bx bx-caret-left'></i>Back</a>  
+        </div>
+        <div class="add-form-container">
         <div class="add-form-box">
-            <h3>Reservation</h3>
-            <form class="add-form" method="POST" action="reserve.php" >
+            <form class="add-form" method="POST" action="addres.php" >
                 <label for="fn">First Name</label>
                 <input type="text" id='fn'name="fn" required placeholder="Enter First Name" value="<?php if(isset($_POST['fn'])) { echo $_POST['fn']; } ?>" >
                 <?php
@@ -44,7 +43,7 @@
                     }
                 ?>
                 <label for="ln">Last Name</label>
-                <input type="text" id='ln'name="ln" placeholder="Enter Last Name" value="<?php if(isset($_POST['ln'])) { echo $_POST['ln']; } ?>" required>
+                <input type="text" id='ln'name="ln" required placeholder="Enter Last Name" value="<?php if(isset($_POST['ln'])) { echo $_POST['ln']; } ?>" >
                 <?php
                     if(isset($_POST['res']) && !validate_last_name($_POST)){
                 ?>
@@ -77,15 +76,13 @@
                 <?php
                     }
                 ?>
-                <input type="submit" class="button_res" value="Reserve" name="res" id="res"> 
+                <input type="submit" class="button" value="Reserve" name="res" id="res"> 
         </div>
         </form>
 
     </div>
-    
 
-<?php 
-    
-    require_once '../includes/footer.php';
 
-?>
+    </div>
+
+</div>

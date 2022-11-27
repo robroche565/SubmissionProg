@@ -7,7 +7,11 @@
 
 
     <div class="home-content">
-    <div class="overview-boxes">
+    <div class="table-container">
+        <div class="table-heading">
+            <h3 class="table-title">Dashboard</h3>
+        </div>
+        <div class="overview-boxes">
             <div class="box">
                 <div class="right-side">
                     <div class="box-topic">Total Accounts</div>
@@ -33,18 +37,19 @@
             </div>
         </div>
     </div>
+
+
+
+    </div>
+            
+                
+    
+
   </section>
-  <script>
-   let sidebar = document.querySelector(".sidebar");
-   let sidebarBtn = document.querySelector(".sidebarBtn");
-  sidebarBtn.onclick = function() {
-    sidebar.classList.toggle("active");
-    if(sidebar.classList.contains("active")){
-    sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
-  }else
-    sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-  }
- </script>
+  <?php
+    require_once '../includes_admin/script.php'
+  
+  ?>
 </body>
 </html>
 

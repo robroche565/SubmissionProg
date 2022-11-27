@@ -11,7 +11,7 @@
                 <?php
                     if($_SESSION['user_type'] == 'admin'){ 
                 ?>
-                    <a href="#" class="button">Add New Reservation</a>
+                    <a href="../add reservation/addres.php" class="button">Add New Reservation</a>
                 <?php
                     }
                 ?>
@@ -73,3 +73,7 @@
             </table>
         </div>
     </div>
+    <?php
+    require_once '../includes_admin/script.php'
+  
+  ?>

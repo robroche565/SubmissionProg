@@ -602,17 +602,10 @@ footer p:nth-child(2){
 
 
 .add-form-container input[type="datetime-local" i] {
-    padding: 2%;
-    width: 70%;
     font-size: 15px;
-    
 }
 
-.add-form-container input[type="text" i] {
-    padding: 2%;
-    width: 100%;
-    font-size: 15px;
-}
+
 .container {
     display: inline-block;
     position: relative;
@@ -737,5 +730,12 @@ footer p:nth-child(2){
     max-width: 400px;
   }
 
-   
+  input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
 
