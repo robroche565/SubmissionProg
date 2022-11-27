@@ -11,6 +11,7 @@ class Reservation{
     public $lastname;
     public $res_date;
     public $server = 'None';
+    public $cur_date;
 
     protected $db;
 
@@ -35,10 +36,15 @@ class Reservation{
         }
         else{
             return false;
+        }   
+    }
+    function show(){
+        $sql = "SELECT * FROM reservation ORDER BY CONCAT('lastname',', ','firstname') ASC;";
+        $query=$this->db->connect()->prepare($sql);
+        if($query->execute()){
+            $data = $query->fetchAll();
         }
-        
-        
-        
+        return $data;
     }
 
 }
