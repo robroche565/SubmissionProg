@@ -57,7 +57,7 @@
                     <input type="text" name="firstname" placeholder="First name" required>
                     <label>Last Name</label>
                     <input type="text" name="lastname" placeholder="Last name" required>
-                    <input type="hidden" id="type" name="type" id="type" value="user">
+                    <input type="hidden" id="type" name="type" value="user">
                     <label>User Name</label>
                     <input type="text" name="username" placeholder="Username" required>
                     <label>Password</label>

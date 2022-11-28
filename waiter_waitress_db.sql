@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2022 at 12:04 PM
+-- Generation Time: Nov 28, 2022 at 01:52 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -29,17 +29,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `reservation` (
   `res_id` int(11) NOT NULL,
-  `firstname` varchar(255) NOT NULL,
-  `lastname` varchar(255) NOT NULL,
   `res_date` datetime NOT NULL,
   `server` varchar(255) NOT NULL,
-  `cur_date` timestamp NOT NULL DEFAULT current_timestamp()
+  `cur_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `reservation`
---
-
 
 -- --------------------------------------------------------
 
@@ -61,9 +55,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `type`, `username`, `password`) VALUES
-(1, 'Jaydee', 'Ballaho', 'user', 'jaydee', 'jaydee'),
-(2, 'Rob', 'Villanueva', 'user', 'Roberto', 'Roberto'),
-(3, 'roberto', 'hamburger', 'admin', 'admin', 'admin');
+(1, 'Admin', 'User', 'admin', 'admin', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -73,7 +65,8 @@ INSERT INTO `user` (`id`, `firstname`, `lastname`, `type`, `username`, `password
 -- Indexes for table `reservation`
 --
 ALTER TABLE `reservation`
-  ADD PRIMARY KEY (`res_id`);
+  ADD PRIMARY KEY (`res_id`),
+  ADD KEY `user_cons` (`user_id`);
 
 --
 -- Indexes for table `user`
@@ -89,13 +82,23 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `res_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `res_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `reservation`
+--
+ALTER TABLE `reservation`
+  ADD CONSTRAINT `user_cons` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

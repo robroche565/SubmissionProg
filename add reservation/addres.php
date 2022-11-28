@@ -11,12 +11,11 @@
     if(isset($_POST['res'])){
 
         $reservation = new Reservation();
-        $reservation->firstname = htmlentities($_POST['fn']);
-        $reservation->lastname = htmlentities($_POST['ln']);
         $reservation->res_date = htmlentities($_POST['res_date']);
         if(isset($_POST['server'])){
             $reservation->server = $_POST['server'];
         }
+        $reservation->user_id = htmlentities($_POST['accounts']);
         if(validate_reservation($_POST)){
             if($reservation->add()){  
                 header('location: ../admin/reserve.php');
@@ -33,24 +32,22 @@
         <div class="add-form-container">
         <div class="add-form-box">
             <form class="add-form" method="POST" action="addres.php" >
-                <label for="fn">First Name</label>
-                <input type="text" id='fn'name="fn" required placeholder="Enter First Name" value="<?php if(isset($_POST['fn'])) { echo $_POST['fn']; } ?>" >
-                <?php
-                    if(isset($_POST['res']) && !validate_first_name($_POST)){
-                ?>
-                    <p class="error">First name is invalid. Trailing spaces will be ignored.</p>
-                <?php
-                    }
-                ?>
-                <label for="ln">Last Name</label>
-                <input type="text" id='ln'name="ln" required placeholder="Enter Last Name" value="<?php if(isset($_POST['ln'])) { echo $_POST['ln']; } ?>" >
-                <?php
-                    if(isset($_POST['res']) && !validate_last_name($_POST)){
-                ?>
-                    <p class="error">Last name is invalid. Trailing spaces will be ignored.</p>
-                <?php
-                    }
-                ?>
+                <div>
+                    <label for="accounts">Account to be used</label>
+                    <select name="accounts">
+                            <?php
+                                require_once("../classes/account.class.php");
+                                $accounts = new Accounts();
+                                foreach($accounts->show_drop() as $value){?>
+                                   <option value="<?php echo $value['id'];?>"><?php
+                                   echo $value['lastname'].', '.$value['firstname'];
+                                   ?></option>
+                            <?php
+                                }
+
+                            ?>
+                    </select>
+                </div>
                 <label for="date">Date of Reservation</label>
                 <input type="datetime-local" id='res_date'name="res_date" placeholder="Date" required>
           
@@ -76,6 +73,7 @@
                 <?php
                     }
                 ?>
+                
                 <input type="submit" class="button" value="Reserve" name="res" id="res"> 
         </div>
         </form>

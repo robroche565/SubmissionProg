@@ -20,8 +20,8 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Name</th>
-                        <th>Date and Time of Reservation</th>
+                        <th>Account used</th>
+                        <th>Date & Time of Reservation</th>
                         <th>Waiter/Waitress</th>
                         <th>Reservation Created</th>
                         <?php
@@ -47,7 +47,7 @@
                         <tr>
                             <!-- always use echo to output PHP values -->
                             <td><?php echo $i ?></td>
-                            <td><?php echo $value['lastname'] . ', ' . $value['firstname'] ?></td>
+                            <td><?php echo $value['fullname'] ?></td>
                             <td><?php echo $value['res_date'] ?></td>
                             <td><?php echo $value['server'] ?></td>
                             <td><?php echo $value['cur_date'] ?></td>

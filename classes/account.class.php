@@ -48,6 +48,15 @@ class Accounts{
             return false;
         }	
     }
+    function show_drop(){
+        $sql = "SELECT * FROM user ORDER BY CONCAT('lastname',', ','firstname') ASC;";
+        $query=$this->db->connect()->prepare($sql);
+        if($query->execute()){
+            $data = $query->fetchAll();
+        }
+        return $data;
+
+    }
 
 
 

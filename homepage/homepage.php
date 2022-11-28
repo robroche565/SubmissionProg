@@ -12,9 +12,9 @@
         $users->username = htmlentities($_POST['username']);
         $users->password = htmlentities($_POST['password']);
         $res = $users->validate();
-        if($res){
-            $_SESSION['user'] = $res['id'];
+        if($res){ 
             $_SESSION['logged-in'] = $res['username'];
+            $_SESSION['acc_id'] = $res['id'];
             $_SESSION['fullname'] = $res['firstname'].' '.$res['lastname'];
             $_SESSION['user_type'] = $res['type'];
             if($res['type'] == 'admin'){
