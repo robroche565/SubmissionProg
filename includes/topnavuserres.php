@@ -12,8 +12,8 @@
         </ul> 
     </nav>
     <div class="profile" onclick="toggleMenu()">
-        <span class="admin-name"><?php echo $_SESSION['fullname']; ?></span>
         <i class='bx bx-user-circle'></i>
+        <span class="admin-name"><?php echo $_SESSION['fullname']; ?></span>
     </div>
 
     <div class="sub-menu-wrap" id="subMenu">

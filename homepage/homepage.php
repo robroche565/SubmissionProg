@@ -37,13 +37,13 @@
         $account->username = $_POST['username'];
         $account->password = $_POST['password'];
         if($account->add()){  
-                //redirect user to faculty page after saving
             header('location: homepage.php');
         }
         
     }
     
     require_once '../includes/topnav.php';
+    require_once '../includes/success_mod.php'
 ?>
         
         

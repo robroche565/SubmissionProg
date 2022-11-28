@@ -19,7 +19,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="../admin/accounts.php">
             <i class='bx bx-user' ></i>
             <span class="links_name">Accounts</span>
           </a>
@@ -45,6 +45,6 @@
       <div class="profile-details">
         <i class='bx bx-user-circle'></i>
         <span class="admin-name"><?php echo $_SESSION['fullname']; ?></span>
-        <i class='bx bx-chevron-down' ></i>
+        
       </div>
     </nav>

@@ -62,7 +62,7 @@
                     <input type="text" name="username" placeholder="Username" required>
                     <label>Password</label>
                     <input type="password" name="password" placeholder="Password" required>
-                    <button type="submit" class="button_create" value="create account" name="save" id="save">Create Account</button>
+                    <button type="submit" class="button_create" value="create account" name="save" id="save" onclick="openPopup()">Create Account</button>
                 </div>
             </div>
         </form>

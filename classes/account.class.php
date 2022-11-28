@@ -48,14 +48,45 @@ class Accounts{
             return false;
         }	
     }
+
     function show_drop(){
-        $sql = "SELECT * FROM user ORDER BY CONCAT('lastname',', ','firstname') ASC;";
+        $sql = "SELECT * FROM user WHERE type ='user'ORDER BY CONCAT('lastname',', ','firstname') ASC;";
         $query=$this->db->connect()->prepare($sql);
         if($query->execute()){
             $data = $query->fetchAll();
         }
         return $data;
 
+    }
+    function show(){
+        $sql = "SELECT * FROM user WHERE type ='user'ORDER BY CONCAT('lastname',', ','firstname') ASC;";
+        $query=$this->db->connect()->prepare($sql);
+        if($query->execute()){
+            $data = $query->fetchAll();
+        }
+        return $data;
+    }
+    function fetch($record_id){
+        $sql = "SELECT * FROM user WHERE id = :id;";
+        $query=$this->db->connect()->prepare($sql);
+        $query->bindParam(':id', $record_id);
+        if($query->execute()){
+            $data = $query->fetch();
+        }
+        return $data;
+    }
+
+    function delete($record_id){
+        $sql = "DELETE FROM user WHERE id = :id;";
+        $query=$this->db->connect()->prepare($sql);
+        $query->bindParam(':id', $record_id);
+        
+        if($query->execute()){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
 
