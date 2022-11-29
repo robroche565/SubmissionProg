@@ -39,8 +39,7 @@ CREATE TABLE `reservation` (
 -- Dumping data for table `reservation`
 --
 
-INSERT INTO `reservation` (`id`, `res_date`, `server`, `cur_date`, `user_id`) VALUES
-(6, '2022-11-29 10:49:00', 'Anya Forger', '2022-11-29 02:49:18', 16);
+
 
 -- --------------------------------------------------------
 
@@ -63,8 +62,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `type`, `username`, `password`, `acc_created`) VALUES
-(11, 'Admin', 'User', 'admin', 'admin', 'admin', '2022-11-28 14:54:10'),
-(16, 'Rob', 'Villanueva', 'user', 'Roberto', 'Roberto', '2022-11-29 02:49:06');
+(1, 'Admin', 'User', 'admin', 'admin', 'admin', '2022-11-28 14:54:10'),
+
 
 --
 -- Indexes for dumped tables
@@ -91,13 +90,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- Constraints for dumped tables
