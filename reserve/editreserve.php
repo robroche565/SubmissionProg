@@ -1,37 +1,50 @@
-<?php 
-  session_start();
-  require_once '../includes/autochecker.php';
-  require_once '../includes_admin/header.php';
-  require_once '../includes_admin/sidebar.php';
-  require_once '../includes_admin/script.php';
-  require_once '../classes/reservation.class.php';
-  require_once '../tools/functions.php';
-    
+<?php
 
+    session_start();
+    require_once '../includes/autochecker.php';
+    require_once '../includes_admin/header.php';
+    require_once '../includes_admin/sidebar.php';
+    require_once '../includes_admin/script.php';
+    require_once '../classes/reservation.class.php';
+    require_once '../tools/functions.php';
+    
+    require_once '../includes/autochecker.php';
+    
     if(isset($_POST['res'])){
 
         $reservation = new Reservation();
+
+        $reservation->id = $_POST['res-id'];
         $reservation->res_date = htmlentities($_POST['res_date']);
         if(isset($_POST['server'])){
             $reservation->server = $_POST['server'];
         }
         $reservation->user_id = htmlentities($_POST['accounts']);
-        if(validate_reservation($_POST)){
-            if($reservation->add()){  
-                header('location: ../admin/reserve.php');
-            }
+        if($reservation->add()){  
+            header('location: reserve.php');
         }
-    }
+        
+        }else{
+            if ($reservation->fetch($_GET['id'])){
+                $data = $reservation->fetch($_GET['id']);
+                $reservation->id = $data['id'];
+                $reservation->code = $data['server'];
+                $reservation->old_code = $data['code'];
+                $reservation->description = $data['accounts'];
+            }
+        }  
+
 ?>
 <div class="home-content">
     <div class="table-container">
         <div class="table-heading form-size">
-            <h3 class="table-title">Add New Reservation</h3>
-            <a class="back" href="../admin/reserve.php"><i class='bx bx-caret-left'></i>Back</a>  
+            <h3 class="table-title">Edit Reservation</h3>
+            <a class="back" href="reserve.php"><i class='bx bx-caret-left'></i>Back</a>  
         </div>
         <div class="add-form-container">
         <div class="add-form-box">
             <form class="add-form" method="POST" action="addres.php" >
+            <input type="text" hidden name="res-id" value="<?php echo $reservation->id ; ?>">
                 <div>
                     <label for="accounts">Account to be used</label>
                     <select name="accounts">

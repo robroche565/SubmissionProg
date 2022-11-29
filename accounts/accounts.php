@@ -9,11 +9,11 @@
 <div class="home-content">
         <div class="table-container">
             <div class="table-heading">
-                <h3 class="table-title">Reservations</h3>
+                <h3 class="table-title">Accounts</h3>
                 <?php
                     if($_SESSION['user_type'] == 'admin'){ 
                 ?>
-                    <a href="../add/addres.php" class="button">Add New Reservation</a>
+                    <a href="addacc.php" class="button">Add New Account</a>
                 <?php
                     }
                 ?>
@@ -22,10 +22,9 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Account used</th>
-                        <th>Date & Time of Reservation</th>
-                        <th>Waiter/Waitress</th>
-                        <th>Reservation Created</th>
+                        <th>Username</th>
+                        <th>Full Name of Account</th>
+                        <th>Account Created</th>
                         <?php
                             if($_SESSION['user_type'] == 'admin'){ 
                         ?>
@@ -37,29 +36,28 @@
                 </thead>
                 <tbody>
                     <?php
-                        require_once '../classes/reservation.class.php';
+                        require_once '../classes/account.class.php';
 
-                        $reservation = new Reservation();
+                        $account = new Accounts();
                         //We will now fetch all the records in the array using loop
                         //use as a counter, not required but suggested for the table
                         $i = 1;
                         //loop for each record found in the array
-                        foreach ($reservation->show() as $value){ //start of loop
+                        foreach ($account->show() as $value){ //start of loop
                     ?>
                         <tr>
                             <!-- always use echo to output PHP values -->
                             <td><?php echo $i ?></td>
-                            <td><?php echo $value['fullname'] ?></td>
-                            <td><?php echo $value['res_date'] ?></td>
-                            <td><?php echo $value['server'] ?></td>
-                            <td><?php echo $value['cur_date'] ?></td>
+                            <td><?php echo $value['username'] ?></td>
+                            <td><?php echo $value['lastname'] . ', ' . $value['firstname'] ?></td>
+                            <td><?php echo $value['acc_created'] ?></td>
                             <?php
                                 if($_SESSION['user_type'] == 'admin'){ 
                             ?>
                                 <td>
                                     <div class="action">
                                         <a class="action-edit" href="#">Edit</a>
-                                        <a href="#" class="action-delete">Delete</a>
+                                        <a class="action-delete" href="deleteacc.php?id=<?php echo $value['id'] ?>" >Delete</a>
                                     </div>
                                 </td>
                             <?php
@@ -75,7 +73,8 @@
             </table>
         </div>
     </div>
-    <?php
+<?php
     require_once '../includes_admin/script.php'
   
-  ?>
+?>
+

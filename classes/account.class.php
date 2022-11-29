@@ -6,6 +6,7 @@ class Accounts{
     //attributes
 
     public $id;
+    
     public $username;
     public $password;
     public $type;

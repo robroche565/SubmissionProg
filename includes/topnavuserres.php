@@ -8,7 +8,7 @@
             <li><a href="../user/userpage.php">Service</a></li>
             <li><a href="../user/userpage.php">Waiter/Waitress</a></li>
             <li><a href="../user/userpage.php">About Us</a></li>
-            <li><a href="../reserve/reserve.php">Reserve</a></li>
+            <li><a href="../reserve_user/reserve.php">Reserve</a></li>
         </ul> 
     </nav>
     <div class="profile" onclick="toggleMenu()">

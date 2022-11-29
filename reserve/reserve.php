@@ -1,75 +1,82 @@
-<?php
-
-    //resume session here to fetch session values
-    
-    require_once '../classes/reservation.class.php';
-    require_once '../tools/functions.php';
-    session_start();
-
-    if(isset($_POST['res'])){
-
-        $reservation = new Reservation();
-        $reservation->res_date = htmlentities($_POST['res_date']);
-        if(isset($_POST['server'])){
-            $reservation->server = $_POST['server'];
-        }
-        $reservation->user_id = htmlentities($_POST['account']);
-        if(validate_reservation($_POST)){
-            if($reservation->add()){  
-                header('location: ../user/userpage.php');
-            }
-        }
-    }
-    
-    require_once '../includes/autochecker.php';
-    require_once '../includes/header.php';
-    require_once '../includes/topnavuserres.php';
-    
+<?php 
+  session_start();
+  require_once '../includes/autochecker.php';
+  require_once '../includes_admin/header.php';
+  require_once '../includes_admin/sidebar.php';
+  
     
 ?>
-    
-
-    <div class="add-form-container">
-        <div class="add-form-box">
-            <h3>Reservation</h3>
-            <form class="add-form" method="POST" action="reserve.php" >
-                <label for="date">Date of Reservation</label>
-                <input type="datetime-local" id='res_date'name="res_date" placeholder="Date" required>
-                <input type="hidden" id="account" name="account" value="<?php echo $_SESSION['acc_id'] ?>">
-                <div>
-                    <label for="server">Choose Your Waiter/Waitress</label><br>
-                    <label class="container" for="anya">Anya Forger
-                        <input type="radio" name="server" id="anya" value="Anya Forger" >
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="container" for="yor">Yor Forger
-                        <input type="radio" name="server" id="yor" value="Yor Forger" >
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="container" for="loid">Loid Forger
-                        <input type="radio" name="server" id="loid" value="Loid Forger" >
-                        <span class="checkmark"></span>
-                    </label>        
-                </div>
+<div class="home-content">
+        <div class="table-container">
+            <div class="table-heading">
+                <h3 class="table-title">Reservations</h3>
                 <?php
-                    if(isset($_POST['res']) && !validate_server($_POST)){
+                    if($_SESSION['user_type'] == 'admin'){ 
                 ?>
-                    <p class="error">Please select Waiter/Waitress.</p>
+                    <a href="addres.php" class="button">Add New Reservation</a>
                 <?php
                     }
                 ?>
-                
-                
-                <input type="submit" class="button_res" value="Reserve" name="res" id="res"> 
-                </div>
-                
-        </form>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Account used</th>
+                        <th>Date & Time of Reservation</th>
+                        <th>Waiter/Waitress</th>
+                        <th>Reservation Created</th>
+                        <?php
+                            if($_SESSION['user_type'] == 'admin'){ 
+                        ?>
+                            <th class="action">Action</th>
+                        <?php
+                            }
+                        ?>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        require_once '../classes/reservation.class.php';
 
+                        $reservation = new Reservation();
+                        //We will now fetch all the records in the array using loop
+                        //use as a counter, not required but suggested for the table
+                        $i = 1;
+                        //loop for each record found in the array
+                        foreach ($reservation->show() as $value){ //start of loop
+                    ?>
+                        <tr>
+                            <!-- always use echo to output PHP values -->
+                            <td><?php echo $i ?></td>
+                            
+                            <td><?php echo $value['fullname'] ?></td>
+                            <td><?php echo $value['res_date'] ?></td>
+                            <td><?php echo $value['server'] ?></td>
+                            <td><?php echo $value['cur_date'] ?></td>
+                            <?php
+                                if($_SESSION['user_type'] == 'admin'){ 
+                            ?>
+                                <td>
+                                    <div class="action">
+                                        <a class="action-edit" href="#">Edit</a>
+                                        <a href="deletereserve.php?id=<?php echo $value['id'] ?>" class="action-delete">Delete</a>
+                                    </div>
+                                </td>
+                            <?php
+                                }
+                            ?>
+                        </tr>
+                    <?php
+                        $i++;
+                    //end of loop
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </div>
-    
-
-<?php 
-    
-    require_once '../includes/footer.php';
-
-?>
+    <?php
+    require_once '../includes_admin/script.php'
+  
+  ?>

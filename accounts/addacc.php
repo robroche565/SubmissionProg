@@ -19,7 +19,7 @@
         $account->password = $_POST['password'];
     
         if($account->add()){  
-            header('location: ../admin/accounts.php');
+            header('location: accounts.php');
             }
         }
     
@@ -29,7 +29,7 @@
     <div class="table-container">
         <div class="table-heading form-size">
             <h3 class="table-title">Add New Account</h3>
-            <a class="back" href="../admin/accounts.php"><i class='bx bx-caret-left'></i>Back</a>  
+            <a class="back" href="accounts.php"><i class='bx bx-caret-left'></i>Back</a>  
         </div>
         <div class="add-form-container">
         <div class="add-form-box">

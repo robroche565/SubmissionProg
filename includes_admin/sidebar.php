@@ -13,13 +13,13 @@
           </a>
         </li>
         <li>
-          <a href="../admin/reserve.php">
+          <a href="../reserve/reserve.php">
             <i class='bx bx-list-ul'></i>
             <span class="links_name">Reserve</span>
           </a>
         </li>
         <li>
-          <a href="../admin/accounts.php">
+          <a href="../accounts/accounts.php">
             <i class='bx bx-user' ></i>
             <span class="links_name">Accounts</span>
           </a>

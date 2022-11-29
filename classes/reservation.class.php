@@ -5,7 +5,7 @@ require_once 'database.php';
 class Reservation{
     //attributes
 
-    public $res_id;
+    public $id;
 
     public $res_date;
     public $server = 'None';
@@ -38,7 +38,7 @@ class Reservation{
     }
     
     function show(){
-        $sql = "SELECT reservation.res_date,reservation.server,reservation.cur_date,CONCAT(user.firstname,', ',user.lastname) AS fullname FROM reservation INNER JOIN user ON reservation.user_id = user.id;";
+        $sql = "SELECT reservation.id,reservation.res_date,reservation.server,reservation.cur_date,CONCAT(user.firstname,', ',user.lastname) AS fullname FROM reservation INNER JOIN user ON reservation.user_id = user.id;";
         $query=$this->db->connect()->prepare($sql);
         if($query->execute()){
             $data = $query->fetchAll();
@@ -46,13 +46,26 @@ class Reservation{
         return $data;
     }
     function fetch($record_id){
-        $sql = "SELECT * FROM reservation WHERE id = :user_id;";
+        $sql = "SELECT * FROM reservation WHERE id = :id;";
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':id', $record_id);
         if($query->execute()){
             $data = $query->fetch();
         }
         return $data;
+    }
+    
+    function delete($record_id){
+        $sql = "DELETE FROM reservation WHERE id = :id;";
+        $query=$this->db->connect()->prepare($sql);
+        $query->bindParam(':id', $record_id);
+        
+        if($query->execute()){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     
 

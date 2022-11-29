@@ -13,7 +13,7 @@
     if(isset($_GET['id'])){
         if($account->delete($_GET['id'])){
 
-            header('location: ../admin/accounts.php');
+            header('location: accounts.php');
         }
     }
 ?>
